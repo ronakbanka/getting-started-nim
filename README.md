@@ -1,5 +1,5 @@
-# Project Name
-This project is ________. (Describe the main goals of the project. Limit to 1-2 sentences)
+# Getting Started with NIM on NVIDIA Workbench
+This project is a getting started guide on running NVIDIA NIMs using workbench and docker compose
 
 ## Description
 Optional section to provide a more detailed overview of the project.
