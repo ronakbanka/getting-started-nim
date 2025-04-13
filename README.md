@@ -1,4 +1,4 @@
-# Getting Started with NIM on NVIDIA Workbench
+# Getting Started with NVIDIA NIM and Workbench
 This project is a getting started guide on running NVIDIA NIMs using workbench and docker compose
 
 ## Description
