@@ -89,9 +89,15 @@ execution:
         gpu:
             requested: 0
         sharedMemoryMB: 0
-    secrets: []
+    secrets:
+        - variable: NGC_API_KEY
+          description: NGC API Key
     mounts:
         - type: project
           target: /project/
           description: Project directory
           options: rw
+        - type: volume
+          target: /nvwb-shared-volume/
+          description: ""
+          options: volumeName=nvwb-shared-volume
