@@ -1,0 +1,1 @@
+{"schema":"v1","records":[{"type":"ENVIRONMENT","operation":"CREATED","data":[{"data":"Added packages through pip package manager: langchain==0.3.23, langchain-community==0.3.21, langchain-core==0.3.51, langchain-nvidia-ai-endpoints==0.3.9","mime":"text/plain"}],"important":null}]}
