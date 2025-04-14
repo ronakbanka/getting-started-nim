@@ -1,3 +1,5 @@
+[![Static Badge](https://img.shields.io/badge/Open_In-AI_Workbench-76B900)](https://build.nvidia.com/open-ai-workbench/aHR0cHM6Ly9naXRodWIuY29tL3JvbmFrYmFua2EvZ2V0dGluZy1zdGFydGVkLW5pbS13b3JrYmVuY2g=)
+
 # Getting Started with NVIDIA NIM and Workbench
 This project is a getting started guide on running NVIDIA NIMs using workbench and docker compose
 
