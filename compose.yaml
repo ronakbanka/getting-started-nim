@@ -14,7 +14,6 @@ services:
     - "8000"
     environment:
       - NGC_API_KEY=${NGC_API_KEY}
-      # NIM OpenTelemetry Settings
       - NIM_OTEL_SERVICE_NAME=llama
       - NIM_OTEL_TRACES_EXPORTER=otlp
       - NIM_OTEL_METRICS_EXPORTER=console
@@ -53,17 +52,29 @@ services:
       - "4318:4318" # OTLP/HTTP receiver
       - "55680:55679" # zpages extension
     depends_on:
-      - zipkin
+      - jaeger
     profiles: ["all","observability"]
 
-  zipkin:
-    image: openzipkin/zipkin
-    environment:
-      JAVA_OPTS: "-Xms4g -Xmx8g -XX:+ExitOnOutOfMemoryError"
+  # zipkin:
+  #   image: openzipkin/zipkin
+  #   environment:
+  #     JAVA_OPTS: "-Xms4g -Xmx8g -XX:+ExitOnOutOfMemoryError"
+  #   ports:
+  #     - "9411:9411" # Zipkin UI and API
+  #   expose:
+  #   - "9411"
+  #   profiles: ["all","observability"]
+    
+  jaeger:
+    image: jaegertracing/jaeger:latest
     ports:
-      - "9411:9411" # Zipkin UI and API
+      - "16686:16686"
+      - "8888:8888"
+      - "9889:8889"
+      - "9317:4317"
+      - "9318:4318"
     expose:
-    - "9411"
+      - "16686"
     profiles: ["all","observability"]
 
   prometheus:
@@ -90,5 +101,14 @@ services:
     ports:
       - "3000:3000"
     expose:
-    - "3000"
+      - "3000"
+    volumes:
+      - ./data/grafana/provisioning:/etc/grafana/provisioning
+      - grafana-storage:/var/lib/grafana
+    environment:
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
     profiles: ["all","observability"]
+    
+volumes:
+  grafana-storage:
+    driver: local
