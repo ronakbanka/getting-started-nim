@@ -3,8 +3,9 @@
 # Getting Started with NVIDIA NIM and Workbench
 This is an [NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/) project to try out the observability capabilities of NVIDIA NIMs. It lets you:
 * Run inference **locally** using Llama 3.2 3B Instruct **microservices** via [NVIDIA Inference Microservices (NIMs)](https://www.nvidia.com/en-us/ai/) on Docker
+* Use the Gradio UI Chat application to interact with the hosted NIM
 * Use Jupyter notebook to interact with the model using langchain
-* Visualize the performance metrics using Grafana and traces using Zipkin
+* Visualize the performance metrics and traces using Prometheus, Jaeger, and Grafana.
 
 ## Description
 This Project has two main capabilities: 
