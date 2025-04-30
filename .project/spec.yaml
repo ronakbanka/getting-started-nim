@@ -1,8 +1,8 @@
 specVersion: v2
 specMinorVersion: 2
 meta:
-    name: getting-started-nim-workbench
-    image: project-getting-started-nim-workbench
+    name: nim-observability-workbench-demo
+    image: project-nim-observability-workbench-demo
     description: ""
     labels: []
     createdOn: "2025-04-13T03:57:28Z"
